@@ -1,0 +1,183 @@
+:root {
+    --primary: #16a34a;  /* Yeşil-600 */
+    --primary-dark: #15803d;  /* Yeşil-700 */
+    --text-dark: #1e293b;
+    --text-light: #64748b;
+    --light-bg: #f8fafc;
+}
+
+.header-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    min-height: 600px;
+    background: linear-gradient(135deg, rgba(22, 163, 74, 0.9) 0%, rgba(21, 128, 61, 0.9) 100%);
+}
+
+.header-content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.floating-element {
+    position: absolute;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    backdrop-filter: blur(5px);
+    animation: float 15s ease-in-out infinite;
+}
+
+.navbar-premium .navbar-brand {
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.hero-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.hero-title {
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1.2;
+    color: white;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: rgba(255,255,255,0.9);
+    max-width: 600px;
+    margin-bottom: 2.5rem;
+}
+
+.cta-button {
+    position: relative;
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: white;
+    color: var(--primary);
+    border-radius: 50px;
+    font-weight: 600;
+    overflow: hidden;
+    z-index: 1;
+    transition: all 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+    box-shadow: 0 10px 30px rgba(22, 163, 74, 0.3);
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: var(--primary-dark);
+    z-index: -1;
+    transition: height 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.cta-button:hover {
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(22, 163, 74, 0.4);
+}
+
+.cta-button:hover::before {
+    height: 100%;
+}
+
+@media (max-width: 992px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    .navbar-premium {
+        background: rgba(255,255,255,0.95);
+        backdrop-filter: blur(10px);
+    }
+    
+    .nav-link-premium {
+        color: var(--text-dark) !important;
+    }
+    
+    .nav-link-premium::after {
+        background: var(--primary);
+    }
+}
+
+ .property-btn, .contact-btn {
+        position: relative;
+        overflow: hidden;
+        border-radius: 0;
+        z-index: 1;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        font-weight: 500;
+        min-width: 180px;
+        text-align: center;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .btn-text {
+        position: relative;
+        z-index: 2;
+    }
+    
+    .btn-hover-effect {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0;
+        z-index: 1;
+        transition: all 0.3s ease;
+    }
+    
+    /* MÜLKERİ KEŞFET BUTONU */
+    .property-btn {
+        background-color: #b78d65;
+        color: white;
+        border: none;
+    }
+    
+    .property-btn .btn-hover-effect {
+        background-color: white;
+    }
+    
+    .property-btn:hover {
+        color: #121212;
+    }
+    
+    .property-btn:hover .btn-hover-effect {
+        height: 100%;
+    }
+    
+    /* BİZE ULAŞIN BUTONU */
+    .contact-btn {
+        background-color: transparent;
+        color: white;
+        border: 2px solid white;
+    }
+    
+    .contact-btn .btn-hover-effect {
+        background-color: #b78d65;
+    }
+    
+    .contact-btn:hover {
+        border-color: #b78d65;
+    }
+    
+    .contact-btn:hover .btn-hover-effect {
+        height: 100%;
+    }
+
